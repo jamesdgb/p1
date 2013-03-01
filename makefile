@@ -1,12 +1,12 @@
 CC=gcc
 CFLAGS=-W -Wall -ansi -pedantic
 LDFLAGS=
-EXEC=hello
+EXEC=hello.exe
 
 
 all: $(EXEC)
 
-hello: main.o
+$(EXEC): main.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 main.o: main.c
 	$(CC) -o $@ -c $< $(CFLGAGS)
