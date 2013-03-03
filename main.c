@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main()
 {
-	printf("------------------\n");
-	printf("Hello World\n");
-	printf("------------------\n");
-	return 0;
+    printf("Hello world!\n");
+    return 0;
 }
