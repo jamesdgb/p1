@@ -16,12 +16,29 @@ typedef struct in_addr IN_ADDR;
 
 #include "socket.h"
 
+#define WINDOW_WIDTH 80
 
+void printNChar(int length,char c){
+   int i;
+   for(i=0;i<length;i++)
+   {
+      printf("%c",c);
+   }
+   printf("\n");
+}
+
+void printLineLength(int length){
+   printNChar(length,'-');
+}
+
+void printLine(){
+   printLineLength(WINDOW_WIDTH);
+}
 
 void socketCreation(void)
 {
-    printf("---------------\n");
-    printf("STARTING SOCKET\n");
+    printLine();
+    printf("%80s\n","STARTING SOCKET");
 	SOCKET sock = socket(AF_INET,SOCK_STREAM,0);
 	if(sock == INVALID_SOCKET)
 	{
@@ -50,6 +67,6 @@ void socketCreation(void)
         exit(-2);
     }
 
-    printf("Ending socket\n");
-    printf("--------------\n");
+    printf("%80s\n","ENDING SOCKET");
+    printLine();
 }
