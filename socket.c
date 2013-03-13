@@ -59,7 +59,9 @@ void socketCreation(char *serverName)
         exit(EXIT_FAILURE);
     }
 
-    printf("%s address is : %d.%d.%d.%d (%d oct)\n",hostinfo->h_name,hostinfo->h_addr[0],hostinfo->h_addr[1],hostinfo->h_addr[2],hostinfo->h_addr[3],hostinfo->h_length);
+    printf("%s address is : %d.%d.%d.%d (%d oct)\n",hostinfo->h_name,
+      hostinfo->h_addr[0],hostinfo->h_addr[1],hostinfo->h_addr[2],
+      hostinfo->h_addr[3],hostinfo->h_length);
     sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr; /* l'adresse se trouve dans le champ h_addr de la structure hostinfo */
     sin.sin_port = htons(80); /* on utilise htons pour le port */
     sin.sin_family = AF_INET;
